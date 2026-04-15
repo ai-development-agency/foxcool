@@ -526,7 +526,34 @@
 	<script>typeof document<"u"&&(window.process={...window.process,env:{...window.process?.env,NODE_ENV:"production"}});</script>
 	<link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/react.BRTWin1F.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/rolldown-runtime.uxh0A31G.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/motion.BGPBh2pW.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/framer.DQvpJ8IL.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/shared-lib.uezxkEp2.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/gzoQQlRO_.DEAY8k24.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/xZndidUCt.CIZlCMnD.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/qpPs4KJGx.DWSU-g87.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/XU5njHl8ZTyOUHZ1oJm0UMi1isAybAmRLnFJZ8OPcZ0.kNEMKpT_.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/kYqhjZVRZ.MtELvZN8.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/w1SnphBcG.BGs71Km7.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/Qu9sKqLbN.Bb9B7rdX.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/zu2jPqwO9.BiMKarLj.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/YAP816Y5n.SeWMdJkt.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/mKd0PPOSi.Bj3PRBPX.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/augiA20Il.BDJnsugW.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/LaBTdDIod.Ca5f1HME.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/XNzPCJ5Gr.t3JS59nj.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/CdhjTBb6q.3V8kz4tl.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/RDV2HA_j2.Ca5DrZ57.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/Q2pE01BuX.CJ2HQMTQ.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/FU3cn7feI.D82eR8jD.mjs"><script type="module" async data-framer-bundle="main" fetchPriority="low" src="https://framerusercontent.com/sites/6O1aEfFKQsYXwbKJgwM7kJ/script_main.DAe-TPEi.mjs"></script>
 	<!-- Start of bodyEnd -->
-    
+    <script>
+    (function(){
+      var NEW_TEL = "tel:+380661492392";
+      var OLD = { "tel:+4733378901": 1, "mailto:someone@example.com": 1 };
+      function fix(root){
+        var links = (root || document).querySelectorAll('a[href]');
+        for (var i = 0; i < links.length; i++) {
+          if (OLD[links[i].getAttribute('href')]) {
+            links[i].setAttribute('href', NEW_TEL);
+          }
+        }
+      }
+      fix();
+      new MutationObserver(function(muts){
+        for (var i = 0; i < muts.length; i++) {
+          var added = muts[i].addedNodes;
+          for (var j = 0; j < added.length; j++) {
+            if (added[j].nodeType === 1) fix(added[j]);
+          }
+          if (muts[i].type === 'attributes' && muts[i].target.tagName === 'A') {
+            if (OLD[muts[i].target.getAttribute('href')]) {
+              muts[i].target.setAttribute('href', NEW_TEL);
+            }
+          }
+        }
+      }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+    })();
+    </script>
     <!-- End of bodyEnd -->
 </body>
 </html>
